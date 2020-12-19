@@ -36,4 +36,4 @@ The Finite State Machine approach is proper for this application for the followi
 2. If any additional functions shall be added to the application, the developers can simply add another state to the FSM, well-define the transitions, and boom, new function ready to go.
 
 # Class Diagram
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/72012820-e4bd-4c6e-98fd-e7facc4ae0d4/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/72012820-e4bd-4c6e-98fd-e7facc4ae0d4/Untitled.png)
+![https://drive.google.com/file/d/1f2sVmn0MLlJ7Ak_XjC-7rMxuS7bxzVPX/view?usp=sharing](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/72012820-e4bd-4c6e-98fd-e7facc4ae0d4/Untitled.png)
