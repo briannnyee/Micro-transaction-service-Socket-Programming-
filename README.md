@@ -1,23 +1,15 @@
 # Micro transaction service (Socket Programming)
+
 # Environment
-
----
-
 Ubuntu 20.04.1 LTS ( on Windows 10 WSL )
 
 # How to compile
-
----
-
 In terminal, under the Server / Client file directory, 
 
 1. Type in ***make*** command
 2. If success, the ***server*** / ***client*** binary file should appear in the same directory
 
 # How to execute
-
----
-
 In terminal, after successful compilation,
 
 1. Type in ***./server***  / ***./client*** command
@@ -25,9 +17,6 @@ In terminal, after successful compilation,
 3. After setting up, the application is ready to go
 
 # New Features
-
----
-
 Secure encrypted connection
 
 - Server-Client, Client-Client connection are now protected under the SSL protocol
@@ -45,9 +34,6 @@ Micro-transaction feature
         - Transaction Fail: Print "Transaction Failed \n"
 
 # References
-
----
-
 Dynamically generate key and X509 certificate: [https://stackoverflow.com/questions/256405/programmatically-create-x509-certificate-using-openssl](https://stackoverflow.com/questions/256405/programmatically-create-x509-certificate-using-openssl)
 
 OpenSSL establish SSL connection: 
