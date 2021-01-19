@@ -1,39 +1,55 @@
-# Micro-transaction Service (Socket Programming)
-
+# Micro transaction service (Socket Programming)
 # Environment
+
+---
+
 Ubuntu 20.04.1 LTS ( on Windows 10 WSL )
 
 # How to compile
-In terminal, under the file directory, 
+
+---
+
+In terminal, under the Server / Client file directory, 
 
 1. Type in ***make*** command
-2. If success, the ***client*** binary file should appear in the same directory
+2. If success, the ***server*** / ***client*** binary file should appear in the same directory
 
 # How to execute
+
+---
+
 In terminal, after successful compilation,
 
-1. Type in ***./client*** command
-2. Follow the instructions and enter the desired IP address & port number
-3. Register / Login interface should appear on the screen
+1. Type in ***./server***  / ***./client*** command
+2. Follow the instructions on the screen
+3. After setting up, the application is ready to go
 
-# Features
-- Register / Login State
-    - Login
-    - Register ( no account? register now )
-- Application Interface State
-    - Check Balances
-        - Query server for several information
-    - Microtransaction
-        - Allow user to establish a p2p connection and communicate
-    - Logout
+# New Features
 
-# System Design
-The system implemented a **Finite State Machine** which is used to control the states. The states include Register / Login as well as Application Interface, which can be simply recognized as before / after login states.
+---
 
-The Finite State Machine approach is proper for this application for the following reason,
+Secure encrypted connection
 
-1. The application requires different parts to be shown to the user during different phrases, for example logged in / logged out interface should be different. The FSM can control this simply by state transition.
-2. If any additional functions shall be added to the application, the developers can simply add another state to the FSM, well-define the transitions, and boom, new function ready to go.
+- Server-Client, Client-Client connection are now protected under the SSL protocol
+- Client private key and self-signed X509 certificate are generated in runtime
 
-# Class Diagram
-![https://drive.google.com/file/d/1f2sVmn0MLlJ7Ak_XjC-7rMxuS7bxzVPX/view?usp=sharing](https://drive.google.com/file/d/1f2sVmn0MLlJ7Ak_XjC-7rMxuS7bxzVPX/view?usp=sharing)
+Micro-transaction feature
+
+- Client can now trade with each other with a maximum amount of 20,000 per transfer
+    - Exceptions : negative amount, non-login payee, non-exist payee, insufficient balance
+- Transaction Process ( Suppose A → B) :
+    1. A sends request message to both server and B
+    2. B receives message and print out
+    3. Server receives request and process the transaction, 2 conditions : 
+        - Transaction Success : Print "Transaction Success \n Current Balance: ***<Balance of A>*** \n"
+        - Transaction Fail: Print "Transaction Failed \n"
+
+# References
+
+---
+
+Dynamically generate key and X509 certificate: [https://stackoverflow.com/questions/256405/programmatically-create-x509-certificate-using-openssl](https://stackoverflow.com/questions/256405/programmatically-create-x509-certificate-using-openssl)
+
+OpenSSL establish SSL connection: 
+
+[http://neokentblog.blogspot.com/2012/10/openssl-ssl.html](http://neokentblog.blogspot.com/2012/10/openssl-ssl.html)
